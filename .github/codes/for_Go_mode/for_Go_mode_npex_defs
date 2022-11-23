@@ -1,0 +1,6 @@
+(npex-put-definitions 'ALL
+  '("#run" "" (progn (delete-blank-lines) (save-buffer))
+    (shell-command (format "go run %s" (buffer-file-name))))
+  '("pl" "fmt.Println()" (wrapper-go-import-add "fmt") (backward-char))
+  '("oar" "os.Args[]" (wrapper-go-import-add "os") (backward-char))
+  '("as" ":= "))
