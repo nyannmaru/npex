@@ -1,15 +1,11 @@
 [![GNU Emacs](https://img.shields.io/badge/Emacs-%237F5AB6.svg?&style=for-the-badge&logo=gnu-emacs&logoColor=white)](https://www.gnu.org/software/emacs/)
 
 
-=====================================================================
-
-
+----------------------------
 # NPEX-MODE  
-####Provides Expanded version of Abbrev-Expansion  
-####LET'S ABBREVIATE EVERYTHING!!
-
-======================================================================
-
+#### Provides Expanded version of Abbrev-Expansion  
+#### LET'S ABBREVIATE EVERYTHING!!
+-----------------------------
 
 ## Features-Of-Npex-Mode  
 #### *npex-mode* is the minor mode of emacs in which you can use  
@@ -44,11 +40,11 @@
 ```
 
 -------------------------------------------------------------------------------------
-
-####NOTE
+#### NOTE
 <img src="pics/notif.svg" align="left">
-you have to replace ${dir_somewhere_you_like} with the **absolute-path** directory name you've made through the shell-script above  
 
+
+You have to replace ${dir_somewhere_you_like} with the **absolute-path** directory name you've made through the shell-script above  
 
 ----------------------------------------------------------------------------------
 
@@ -61,7 +57,7 @@ Press <kbd>M-x</kbd> `npex-mode` <kbd>Enter</kbd>
 
 ----------------------------------------------------------------------------------
 
-####NOTE
+#### NOTE
 <img src="pics/notif.svg" align="left">
 If the string "nEx" shows up above the minibuffer, it means it is successfuly installed.  
 Else if minibuffer complains "npex-mode[No match]", it means  
@@ -76,7 +72,7 @@ Else if minibuffer complains "npex-mode[No match]", it means
 
 
 
-*npex-mode* is aiming at providing a expanded version of *abbrev-expansion* that is a one of powerful features built-in of emacs.
+*npex-mode* is aiming at providing a expanded version of `abbrev-expansion` that is a one of powerful features built-in of emacs.
 
 So firstly about how to make a simple expansion of a word into some lengthy words.
 #### Demonstration of *npex-easy-add-region*
@@ -89,9 +85,10 @@ So firstly about how to make a simple expansion of a word into some lengthy word
 4.Select the type "user"(I'll explain this later)  
 
 5.Feed any string you like(in the demonstration gif I used "lstr") and select 'y'
-####NOTE
+#### NOTE
 <img src="pics/notif.svg" align="left">
-This string can not hold '**(**', '**[**', '**{**', '**}**', '**]**', '**)**', '**"**' and '**'**' 
+This string can not hold <bold>(</bold>, <bold>[</bold>, <bold>{</bold>, 
+ <bold>}</bold>,  <bold>]</bold>,  <bold>)</bold>,  <bold>"</bold>  or <bold>'</bold> 
 
 ------------------------------------------------------------------------
 
@@ -110,20 +107,23 @@ Each files are supposed to define *abbrev-definition*s in it.
 
 
 -------------------------------------------------------------
-####About FILES  
+### About FILES  
 <dl>
 	<dt><bold>npex-using-ufile</bold></dt>
-	<dd>Assigned based on the value of *user-full-name*</dd>
+	<dd>Assigned based on the value of <bold>user-full-name</bold></dd>
 	<dt><bold>npex-using-mfile</bold></dt>
-	<dd>Assigned based on the value of *major-mode*</dd>
+	<dd>Assigned based on the value of <bold>major-mode</bold></dd>
 	<dt><bold>npex-using-bfile</bold></dt>
-	<dd>Assigned based on the value of *buffer-file-name*</dd>
+	<dd>Assigned based on the value of <bold>buffer-file-name</bold></dd>
 	<dt><bold>npex-using-pfile</bold></dt>
     <dd>(currently under development...)</dd>
 	<dt><bold>npex-using-appendixes</bold></dt>
 	<dd>(currently under development...)</dd>
 </dl>
-####About ABBREV-DEFINITION
+
+
+
+### About ABBREV-DEFINITION  
 Each abbrev-definition is a **backquoted** or **quoted** list that determines what to do when abbrev-word is expanded.  
 For eample
 
@@ -141,7 +141,7 @@ So the above example would be expanded in order
 
 -------------------------------------------------------------------------
 
-##How-To-Use-Again
+## How-To-Use-Again
 
 1. Open the file you want to edit
 2. Call for edit abbrevs <kbd>M-x</kbd> npex-edit-abbrevs <kbd>Enter</kbd>
