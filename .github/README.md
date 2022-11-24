@@ -101,9 +101,22 @@ This string can not hold <bold>(</bold>, <bold>[</bold>, <bold>{</bold>,
 
 ## Overview of this package  
 *npex-mode* is the minor-mode of *emacs*.  
-Its functionality is made by associating basically 5 files with the currently editing file(in which npex-mode is on).  
-These files are assigned and loaded(if there exists) when the mode is enabled.  
-Each files are supposed to define *abbrev-definition*s in it.  
+Its functionality is given by overriding the command associated with <kbd>Space</kbd>(I presumed that the command overrode is *self-insert-command*).  
+Everytime you press the <kbd>Space</kbd> the word you wrote before the cursor is checked
+
+
+**IF** (an expansion is associated by `npex-abbrev-definition`)  
+
+* The word would be expnaded
+
+
+**ELSE**
+
+* Natural self-insertion-command invoked
+
+
+Associated **Npex-Abbrev-Definitions** are described in the (basically) 5 files which are associated with the current editing buffer(in which npex-mode is on).  
+These files are automatically assigned and loaded(if there exists) when the mode is enabled.  
 
 
 -------------------------------------------------------------
@@ -120,6 +133,8 @@ Each files are supposed to define *abbrev-definition*s in it.
 	<dt><bold>npex-using-appendixes</bold></dt>
 	<dd>(currently under development...)</dd>
 </dl>
+
+<img src="pics/files.png" align="center">
 
 
 
