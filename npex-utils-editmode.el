@@ -13,7 +13,7 @@
    (tprjname  :initarg :tprjname :type (or string nil))
    (tqkillp   :initarg :tqkillp  :type boolean)))
 (defun npex--make-targ-buffer-info (quick-kill-p)
-  (npex--targ-buffer-info :tbuffer (set 'some (current-buffer))
+  (npex--targ-buffer-info :tbuffer (current-buffer)
 			  :tfilename (let ((bf (buffer-file-name)))
 				       (if bf bf
 					 ""))
