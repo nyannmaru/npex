@@ -132,7 +132,7 @@ c, ==Run `npex-expansion-after-hook'  hook=="
 	  (bfun (npex--salvage-before-function definition))
 	  (afun (npex--salvage-after-function definition)))
       (run-hooks 'npex-expansion-before-hook);a
-      (delete-char (- (length abbreved-word)) t);1
+      (delete-char (- (length abbreved-word)) nil);1
       (eval bfun);2
       (run-hooks 'npex-expansion-middle-hook);b
       (insert expanded-word);3
