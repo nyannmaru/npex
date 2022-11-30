@@ -190,15 +190,20 @@ c, ==Run `npex-expansion-after-hook'  hook=="
   (list "begin" "end" "forward" "backward" "indent" "npex"
 	"previous" "next" "move" "newline" "self" "insert"
 	"set" "undo"))
-
-(defun npex--set-onetime-escaper-helper (&optional forcing)
+(defvar-local npex--set-onetime-escaper-helper-count 0)
+;;I don't know why but there may need an existance of a counter if kill-flag is not on(´・ω・｀)why?
+;;fiddling last-command?
+(defun npex--set-onetime-escaper-helper nil
   (interactive)
-  (let ((command-head (car (split-string (symbol-name this-command) "-"))))
+  (let ((command-head (car (split-string (symbol-name last-command) "-"))))
     (when (member command-head npex-escape-killing-command-heads)
-      (local-unset-key (kbd "C-g"))
-      (remove-hook 'post-command-hook 'npex--set-onetime-escaper-messenger  t)
-      (remove-hook 'post-command-hook 'npex--set-onetime-escaper-helper t)
-      (message ""))))
+      (if (< npex--set-onetime-escaper-helper-count 1)
+	  (setf npex--set-onetime-escaper-helper-count (1+ npex--set-onetime-escaper-helper-count))
+	(local-unset-key (kbd "C-g"))
+	(remove-hook 'post-command-hook 'npex--set-onetime-escaper-messenger  t)
+	(remove-hook 'post-command-hook 'npex--set-onetime-escaper-helper t)
+	(setf npex--set-onetime-escaper-helper-count 0)
+	(message "")))))
 
 
 (defun npex-expand-maybe-spc nil
