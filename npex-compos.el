@@ -85,7 +85,7 @@ plz, exchange ’ with apostroph(´・ω・｀)
 ;; (eval (npex--salvage-revert-function (npex--get-definition "so")))
 
 (defcustom npex-separating-chars
-  (list ?\s ?\t ?\" ?\' ?\[ ?\( ?\{ ?\) ?\] ?\})
+  (list ?\s ?\t ?\" ?\' ?\` ?\[ ?\( ?\{ ?\) ?\] ?\})
   "This var is used when `npex--get-before-word' is called.
 Value must be a list of characters, if a character is in, it is treated as a separating point on the buffer when `npex-mode' getting a word, but at the same time you can't use these chars as a abbreved word constituent"
   :type 'list)
