@@ -7,10 +7,10 @@
 ;;(plist-get some :something)
 ;;should use raw?
 (defclass npex--targ-buffer-info nil
-  ((tbuffer   :initarg :tbuffer :type (or buffer nil))
+  ((tbuffer   :initarg :tbuffer :type (or nil buffer))
    (tfilename :initarg :tfilename :type string)
-   (tmode     :initarg :tmode :type (or symbol nil))
-   (tprjname  :initarg :tprjname :type (or string nil))
+   (tmode     :initarg :tmode :type (or nil symbol))
+   (tprjname  :initarg :tprjname :type (or nil string))
    (tqkillp   :initarg :tqkillp  :type boolean)))
 (defun npex--make-targ-buffer-info (quick-kill-p)
   (npex--targ-buffer-info :tbuffer (current-buffer)
@@ -18,7 +18,8 @@
 				       (if bf bf
 					 ""))
 			  :tmode major-mode
-			  :tprjname (npex--get-project-name)
+			  :tprjname (or (npex--get-project-name npex-using-pdir) "")
+			  ;;eieio doesn't allow nil assignment why?
 			  :tqkillp (when quick-kill-p t)))
 ;;(npex--make-targ-buffer-info "quick-killp!(´・ω・｀)")
 (defvar npex--global-targ-buffer-info nil

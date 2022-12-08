@@ -136,7 +136,8 @@
 		 (when (yes-or-no-p (format "Abbrev file for the %s doesn't exist
 Is it okay to save the currnet buffer?: " (upcase type)))
 		   (save-buffer))))
-      (message "currently developping..."))));FIXME(´・ω・｀)setiing hash make file etc
+      (npex--assign-pabbrev)
+      (npex-edit-abbrevs "project" t))));FIXME(´・ω・｀)setiing hash make file etc
 
 
 
