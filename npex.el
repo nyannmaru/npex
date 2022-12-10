@@ -37,7 +37,9 @@
 (require 'npex-compos)
 (require 'npex-utils)
 (require 'npex-compat)
-
+(require 'eieio)
+(require 'seq)
+(require 'easy-mmode)
 (defgroup npex nil
   "Expanded abbrev-expansion minor-mode"
   :group 'abbrev
