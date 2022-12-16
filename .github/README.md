@@ -14,8 +14,8 @@
 * Abbrev-expansion not only limited to certain words but also **function** calls  
 * Abbrev-expansion into **dynamically** changeable words  
 * **Easy** abbrev-table customization (==under development==)  
-* One-time escape command (==under development==)  
-* **Project specific** Abbrev-expansion (==though, not yet implemented at all!!==...(・ω・｀))  
+* One-time escape command after Abbrev-expansion
+* **Project specific** Abbrev-expansion (==some of them are implemented==...(・ω・｀))  
 
 ------------------------------------------------------------------------------------------
 
